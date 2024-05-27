@@ -39,10 +39,11 @@
 <script>
 
 const apiKey = "92c39c28b00faf2a7003a9133027497d";
-const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
+const apiURL = "https://api.openweathermap.org/data/2.5/weather?";
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
+const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
     const response = await fetch(apiURL + city + `&appid=${apiKey}`);
@@ -55,9 +56,23 @@ async function checkWeather(city) {
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
+    if (data.weather[0].main == "Clouds") {
+        document.querySelector(".weather-icon").src = "images/cloudy.png";
+    } else if (data.weather[0].main == "Rain") {
+        document.querySelector(".weather-icon").src = "images/rain.png";
+    } else if (data.weather[0].main == "Sunny") {
+        document.querySelector(".weather-icon").src = "images/sunny.png";
+    } else if (data.weather[0].main == "Snow") {
+        document.querySelector(".weather-icon").src = "images/snow.png";
+    } else if (data.weather[0].main == "Thunderstorm") {
+        document.querySelector(".weather-icon").src = "images/thunderstorm.png";
+    } else if (data.weather[0].main == "Clear") {
+        document.querySelector(".weather-icon").src = "images/clear.png";
+    }
+
 }
 
-searchBtn.addEventListener("click", ()=>{
+searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
 })
 
