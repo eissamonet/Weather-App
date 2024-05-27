@@ -15,10 +15,53 @@
         spellcheck="false">
         <button><img src="images/search.png"></button>
     </div>
-    <div>
-
+    <div class="weather">
+        <img src="images/rain.png" class="weather-icon">
+        <h1 class="temp">70°F</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+            <div class="col">
+                <img src="images/humidity.png">
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="images/wind.png">
+                <div>
+                    <p class="wind">15 km/h</p>
+                    <p>Wind Speed</p>
+                </div>
     </div>
 </div>
+
+<script>
+
+const apiKey = "92c39c28b00faf2a7003a9133027497d";
+const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+
+async function checkWeather(city) {
+    const response = await fetch(apiURL + city + `&appid=${apiKey}`);
+    var data = await response.json();
+
+    console.log(data);
+
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
+}
+
+searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value);
+})
+
+</script>
 
 
 </body>
