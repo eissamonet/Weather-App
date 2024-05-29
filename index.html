@@ -10,25 +10,25 @@
 <body>
 
 <div class="card">
-    <div class="=search">
+    <div class="search">
         <input type="text" placeholder="enter city name"
         spellcheck="false">
-        <button><img src="images/search.png"></button>
+        <button><img src="assets/images/search.png"></button>
     </div>
     <div class="weather">
-        <img src="images/rain.png" class="weather-icon">
+        <img src="./assets/images/rain.png" class="weather-icon">
         <h1 class="temp">70°F</h1>
         <h2 class="city">New York</h2>
         <div class="details">
             <div class="col">
-                <img src="images/humidity.png">
+                <img src="./assets/images/humidity.png">
                 <div>
                     <p class="humidity">50%</p>
                     <p>Humidity</p>
                 </div>
             </div>
             <div class="col">
-                <img src="images/wind.png">
+                <img src="./assets/images/wind.png">
                 <div>
                     <p class="wind">15 km/h</p>
                     <p>Wind Speed</p>
@@ -56,17 +56,17 @@ async function checkWeather(city) {
     document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
     if (data.weather[0].main == "Clouds") {
-        document.querySelector(".weather-icon").src = "images/cloudy.png";
+        document.querySelector(".weather-icon").src = "images/clouds.png";
     } else if (data.weather[0].main == "Rain") {
         document.querySelector(".weather-icon").src = "images/rain.png";
     } else if (data.weather[0].main == "Sunny") {
         document.querySelector(".weather-icon").src = "images/sunny.png";
     } else if (data.weather[0].main == "Snow") {
         document.querySelector(".weather-icon").src = "images/snow.png";
-    } else if (data.weather[0].main == "Thunderstorm") {
-        document.querySelector(".weather-icon").src = "images/thunderstorm.png";
-    } else if (data.weather[0].main == "Clear") {
-        document.querySelector(".weather-icon").src = "images/clear.png";
+    } else if (data.weather[0].main == "Mist") {
+        document.querySelector(".weather-icon").src = "images/mist.png";
+    } else if (data.weather[0].main == "Drizzle") {
+        document.querySelector(".weather-icon").src = "images/drizzle.png";
     }
 
     document.querySelector(".weather").style.display = "block";
