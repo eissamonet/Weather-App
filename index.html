@@ -6,10 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/15e2742d6a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="weather-header">
+            <form class = "weather-search">
+                <input type="text" class = "weather-searchform" placeholder = "Enter City Name">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+            <div class = "weather-units">
+                <span class = "weather-celsius">&#176C</span>
+                <span class = "weather-farenheit">&#176F</span>
+            </div>
+        </div>
+        <div class="weather-body">
+            <h1 class="weather-city">Chicago, IL</h1>
+            <div class="weather-datetime">
+                <p class="weather-date">Monday, 3 June 2024</p>
+                <p class="weather-time">12:00 PM</p>
+            </div>
+            <div class="weather-forecast">
+                <p>Clear</p>
+            </div>
+            <div class="weather-icon">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+            </div>
+            <p class="weather-temp">18&#176</p>
+            <div class="weather-minmax">
+                <p>Min: 12&#176</p>
+                <p>Max: 18&#176</p>
+            </div>
+        </div>
 
-<div class="card">
+        <div class="weather-details">
+            <div class="weather-card">
+                <i class="fa-solid fa-temperature-full"></i>
+                <div>
+                   <p>Real Feel</p>
+                   <p class="weather-realfeel">15&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                   <p>Humidity</p>
+                   <p class="weather-humidity">15&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                   <p>Wind</p>
+                   <p class="weather-wind">15&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                   <p>Pressure</p>
+                   <p class="weather-pressure">15&#176</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--- <div class="card">
     <div class="search">
         <input type="text" placeholder="enter city name"
         spellcheck="false">
@@ -79,8 +143,8 @@ searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
 })
 
-</script>
+</script> --->
 
 
-</body>
-</html>
+
+

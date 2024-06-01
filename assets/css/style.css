@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 body{
-    background: #222;
+    background: white;
 }
-.card{
+/*.card{
     width:90%;
     max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
@@ -85,4 +85,4 @@ body{
 }
 .weather{
     display: none;
-}
+}*/
