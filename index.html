@@ -56,18 +56,20 @@ async function checkWeather(city) {
     document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
     if (data.weather[0].main == "Clouds") {
-        document.querySelector(".weather-icon").src = "images/clouds.png";
+        weatherIcon.src = "./assets/images/clouds.png";
     } else if (data.weather[0].main == "Rain") {
-        document.querySelector(".weather-icon").src = "images/rain.png";
+        weatherIcon.src = "./assets/images/rain.png";
     } else if (data.weather[0].main == "Sunny") {
-        document.querySelector(".weather-icon").src = "images/sunny.png";
+        weatherIcon.src = "./assets/images/sunny.png";
     } else if (data.weather[0].main == "Snow") {
-        document.querySelector(".weather-icon").src = "images/snow.png";
-    } else if (data.weather[0].main == "Mist") {
-        document.querySelector(".weather-icon").src = "images/mist.png";
+        weatherIcon.src = "./assets/images/snow.png";
     } else if (data.weather[0].main == "Drizzle") {
-        document.querySelector(".weather-icon").src = "images/drizzle.png";
+        weatherIcon.src = "./assets/images/drizzle.png";
+    } else if (data.weather[0].main == "Mist") {
+        weatherIcon.src = "./assets/images/mist.png";
     }
+
+
 
     document.querySelector(".weather").style.display = "block";
 
