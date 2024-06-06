@@ -38,12 +38,12 @@ input::placeholder{
 }
 
 .weather-search i{
-  position: absolute;
-  left: 10px;
-  top:10px;
-  font-size:15px;
-  color: #fff;
-}
+    position: absolute;
+    left: 10px;
+    top:10px;
+    font-size:15px;
+    color: #fff;
+  }
 
 .weather-units{
   font-size: 1.5rem;
@@ -77,6 +77,69 @@ input::placeholder{
 .weather-icon img{
     width: 100px;
 }
+
+.weather-temp{
+    font-size: 1.75rem;
+}
+
+.weather-minmax{
+   display: flex;
+   justify-content: center;
+}
+
+.weather-minmax p{
+    margin: 0.5rem;
+    font-size: 14px;
+}
+
+.weather-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-top: 3rem;
+}
+
+.weather-card{
+    display: flex;
+    background: #1e1e1e;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.weather-card i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.weather-card p{
+  font-size: 14px;
+}
+
+@media(max-width: 930px){
+    .container{
+        width: 90%;
+    }
+
+    .weather-header{
+        flex-direction: column;
+    }
+
+    .weather-units{
+        margin-top: 1rem;
+    }
+}
+
+
+@media(max-width: 200px){
+    .weather-details{
+        grid-template-columns: none;
+    }
+}
+
+
+
+
 
 
 /*.card{
