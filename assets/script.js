@@ -12,7 +12,36 @@ let weather_minmax = document.querySelector('.weather_minmax');
 let weather_realfeel = document.querySelector('.weather_realfeel');
 let weather_humidity = document.querySelector('.weather_humidity');
 let weather_wind = document.querySelector('.weather_wind');
-let weather_pressure = document.querySelector('.weather_pressure')
+let weather_pressure = document.querySelector('.weather_pressure');
+
+//city search
+document.querySelector('.weather-search').addEventListener('submit', e => {
+    let search = document.querySelector('.weather-searchform');
+    //prevent default action
+    e.preventDefault();
+    //change current city
+    currentCity = search.value;
+    //get weather forecast
+    getWeather();
+    //clear form
+    search.value = "";
+})
+
+//units
+document.querySelector('.weather-farenheit').addEventListener('click', () => {
+    if(units !== "imperial"){
+        units = "imperial";
+        getWeather();
+    }
+})
+
+
+document.querySelector('.weather-celsius').addEventListener('click',() => {
+    if(units !== "metric"){
+        units = "metric";
+        getWeather();
+    }
+})
 
 
 
@@ -50,12 +79,12 @@ units=${units}`).then(res => res.json()).then
     city.innerHTML = `${data.name}, ${convertCountryCode(data.sys.country)}`
     datetime.innerHTML = convertTime(data.dt, data.timezone);
     weather_forecast.innerHTML = `<p>${data.weather[0].main}`
-    weather_temp.innerHTML = `${data.main.temp.toFixed()}°F`
+    weather_temp.innerHTML = `${data.main.temp.toFixed()} ${units === "imperial" ? "&#176F":"&#176C"}`
     weather_icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png"/>`
-    weather_minmax.innerHTML = `<p>Min: ${data.main.temp_min.toFixed()}°F | Max: ${data.main.temp_max.toFixed()}°F`
-    weather_realfeel.innerHTML = `${data.main.feels_like.toFixed()}°F`
+    weather_minmax.innerHTML = `<p>Min: ${data.main.temp_min.toFixed()}° | Max: ${data.main.temp_max.toFixed()}°</p>`
+    weather_realfeel.innerHTML = `${data.main.feels_like.toFixed()}°`
     weather_humidity.innerHTML = `${data.main.humidity}%`
-    weather_wind.innerHTML = `${data.wind.speed} m/s`
+    weather_wind.innerHTML = `${data.wind.speed} ${units === "imperial" ? "mph":"m/s"}`
     weather_pressure.innerHTML = `${data.main.pressure} hPa`
 })
 }
