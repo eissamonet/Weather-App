@@ -5,6 +5,7 @@ let units = "imperial";
 //selectors
 let city = document.querySelector('.weather-city');
 let datetime = document.querySelector('.weather-datetime');
+let weatherForecast = document.querySelector('.weather-forecast');
 
 function convertTime(timeStamp, timezone){
     const convertTimeZone = timezone / 3600; //convert to hours
@@ -25,7 +26,7 @@ function convertTime(timeStamp, timezone){
 }
 
 //convert country code to name
-function convertCountryCode(country){
+function convertCountryCode(state){
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
     return regionNames.of(country)
 }
@@ -37,9 +38,10 @@ function getWeather(){
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&
 units=${units}`).then(res => res.json()).then
 (data => {
-    city.innerHTML = `${data.name}, ${data.sys.country}`
+    city.innerHTML = `${data.name}, ${convertCountryCode(data.sys.country)}`
     datetime.innerHTML = convertTime(data.dt, data.timezone);
 })
 }
 
 document.body.addEventListener('load', getWeather())
+
