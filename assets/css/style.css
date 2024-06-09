@@ -67,7 +67,7 @@ input::placeholder{
    font-size: 14px;
 }
 
-.weather-forecast{
+.weather_forecast{
     background: #1e1e1e;
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -78,7 +78,7 @@ input::placeholder{
     width: 100px;
 }
 
-.weather-temp{
+.weather-_temp{
     font-size: 1.75rem;
 }
 
