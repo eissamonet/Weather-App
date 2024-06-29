@@ -5,10 +5,11 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background: #1e1e1e;
+
+
 }
 .container{
-    background: rgb(69, 46, 74);
+    background: #1e1e1e;
     color: white;
     padding: 2rem;
     width: 40%;
@@ -48,6 +49,10 @@ input::placeholder{
 
 .weather-units{
   font-size: 1.5rem;
+}
+
+.weather-units span:hover{
+  color: #c74a0b;
 }
 
 .weather-units span{
