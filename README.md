@@ -12,3 +12,4 @@ When a user enters a city name in the search bar and clicks the search button, t
 
 
 
+<img width="1197" alt="Weather App" src="https://github.com/eissamonet/Weather-App/assets/133728858/e60a0a21-e5f4-4ab0-812b-3ce54a2bf5ec">
